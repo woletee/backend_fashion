@@ -2,8 +2,8 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import List
 import requests
-from utils.model_utils import predict_image
-from utils.recommender import get_recommendations_with_images
+from model_utils import predict_image
+from recommender import get_recommendations_with_images
 
 router = APIRouter(prefix="/discover", tags=["Discover"])
 
