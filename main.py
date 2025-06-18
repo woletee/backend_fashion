@@ -3,7 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from database import Base, engine
 import models
-import wardrobe, recommendation, discover
+import discover
 
 app = FastAPI()
 
@@ -23,6 +23,4 @@ Base.metadata.create_all(bind=engine)
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 # ✅ Register routers
-app.include_router(wardrobe.router)
-app.include_router(recommendation.router)
 app.include_router(discover.router)
